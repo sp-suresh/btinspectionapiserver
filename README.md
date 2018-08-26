@@ -28,9 +28,9 @@ Request Body: {
        45.5891279
 	]
 }
-```
 Response Body: 
-```{msg: Added new Inspection successfully}```
+{msg: Added new Inspection successfully}
+```
 The record will be created against loggedin inspector. On successful inspection addition API will return message - "Added new Inspection successfully"
 
 2. To filter the inspections
@@ -84,8 +84,9 @@ offset: skip number of records
 ```
 Read data in collections `inspectionStatusMaster` and `venues` to get the maaping for venue type and inspection status
 
-##Note
 
-1.Both the API require jwt token in header key `tkn` which is obtained over secret `$GHVG^&BVY@#$VB`. You can change it in `./middlewares/authMiddleware.js` if you want.
+## Note
+
+1. Both the API require jwt token in header key `tkn` which is obtained over secret `$GHVG^&BVY@#$VB`. You can change it in `./middlewares/authMiddleware.js` if you want.
 2. To start the server isntall dependecies and run `node server.js` and application will start listening at port `9090`.
 3. Mongo database name is - `test`
