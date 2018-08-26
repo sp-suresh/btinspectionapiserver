@@ -14,26 +14,29 @@ After you have install MongoDB create some collection and indexes required to ru
 
 1. To create a new Inspection
 
-`Url: /api/inspection/`
-`Method: POST`
-`Hedaer: jwtToken`
-`Request Body: {`
-`  "curStatus": 1,`
-`  "lastUpdatedTS": 1535191409371,`
-`  "entryTS": 1535191409371,`
-`  "venueTypeId": 1,`
-`  "location": [`
-`       -45.0446183,`
-`       45.5891279`
-`	]`
-`}`
+```
+Url: /api/inspection/
+Method: POST
+Hedaer: jwtToken
+Request Body: {
+  "curStatus": 1,
+  "lastUpdatedTS": 1535191409371,
+  "entryTS": 1535191409371,
+  "venueTypeId": 1,
+  "location": [
+       -45.0446183,
+       45.5891279
+	]
+}
+```
 Response Body: 
-`{msg: Added new Inspection successfully}`
+```{msg: Added new Inspection successfully}```
 The record will be created against loggedin inspector. On successful inspection addition API will return message - "Added new Inspection successfully"
 
 2. To filter the inspections
 
-`
+
+```
 Url: /api/inspection/?curSt=1&fr=1535222623216&to=1535222723216&vt=1&lmt=20&offset=10
 Method: GET
 Header: jwtToken
@@ -67,22 +70,22 @@ Response Body:
     ],
     "totalCount": 2
 }
-`
+```
 
 Query string parameters are optional, below is the param description
 
-`
+```
 curSt: Current status of the inspection
 fr: inspection added after(inclusive),
 to: inspection till date(inclusive),
 vt: venur type
 lmt: limit to number of records
 offset: skip number of records
-`
+```
 Read data in collections `inspectionStatusMaster` and `venues` to get the maaping for venue type and inspection status
 
 ##Note
 
 1.Both the API require jwt token in header key `tkn` which is obtained over secret `$GHVG^&BVY@#$VB`. You can change it in `./middlewares/authMiddleware.js` if you want.
-2. To start the server run `node server.js` and application will start listening at port `9090`.
+2. To start the server isntall dependecies and run `node server.js` and application will start listening at port `9090`.
 3. Mongo database name is - `test`
