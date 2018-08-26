@@ -1,12 +1,12 @@
 # Basic Inspection REST APIs
-This is submission of my code test for one of my interview, where I was required to ceate teo RESTful APIs.
+This is submission of my code test for one of my interview, where I was required to create some RESTful APIs.
 
 ## Pre Setup Required
 
 1. MongoDB
 2. NodeJS
 
-After you have install MongoDB create some collection and indexes required to run application using below command. You should go through it once beforeyou run it.
+After you have install MongoDB create some collection and indexes required to run application using below command. You should go through it once before you run it.
 
 `mongo < ./scripts/mongoCollSetup.js`
 
@@ -14,23 +14,21 @@ After you have install MongoDB create some collection and indexes required to ru
 
 1. To create a new Inspection
 
-`
-Url: /api/inspection/
-Method: POST
-Hedaer: jwtToken
-Request Body: {
-  "curStatus": 1,
-  "lastUpdatedTS": 1535191409371,
-  "entryTS": 1535191409371,
-  "venueTypeId": 1,
-  "location": [
-       -45.0446183,
-       45.5891279
-	]
-}
+`Url: /api/inspection/`
+`Method: POST`
+`Hedaer: jwtToken`
+`Request Body: {`
+`  "curStatus": 1,`
+`  "lastUpdatedTS": 1535191409371,`
+`  "entryTS": 1535191409371,`
+`  "venueTypeId": 1,`
+`  "location": [`
+`       -45.0446183,`
+`       45.5891279`
+`	]`
+`}`
 Response Body: 
-{msg: Added new Inspection successfully}
-`
+`{msg: Added new Inspection successfully}`
 The record will be created against loggedin inspector. On successful inspection addition API will return message - "Added new Inspection successfully"
 
 2. To filter the inspections
