@@ -17,7 +17,7 @@ After you have install MongoDB create some collection and indexes required to ru
 ```
 Url: /api/inspection/
 Method: POST
-Hedaer: jwtToken
+Hedaer: {tkn: jwtToken}
 Request Body: {
   "curStatus": 1,
   "lastUpdatedTS": 1535191409371,
@@ -39,7 +39,7 @@ The record will be created against loggedin inspector. On successful inspection 
 ```
 Url: /api/inspection/?curSt=1&fr=1535222623216&to=1535222723216&vt=1&lmt=20&offset=10
 Method: GET
-Header: jwtToken
+Header: {tkn: jwtToken}
 Response Body:
 {
     "d": [
